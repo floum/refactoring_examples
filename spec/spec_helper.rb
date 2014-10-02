@@ -1,0 +1,1 @@
+require 'refactoring_examples'
