@@ -9,9 +9,8 @@ module ExtractMethod
     end
 
     def print_owing
-      outstanding = calculate_outstanding
       print_banner
-      print_details outstanding
+      print_details calculate_outstanding
     end
 
     def calculate_outstanding
