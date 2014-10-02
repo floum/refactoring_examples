@@ -3,8 +3,7 @@ module InlineTemp
   class Example1
 
     def too_expensive? an_order
-      base_price = an_order.base_price
-      return (base_price > 1000)
+      an_order.base_price > 1000
     end
 
   end
