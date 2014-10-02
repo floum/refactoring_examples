@@ -10,20 +10,13 @@ module ExtractMethod
 
     def print_owing
       outstanding = calculate_outstanding
-      
       print_banner
-
       print_details outstanding
-
     end
 
     def calculate_outstanding
-      @orders.!
-      outstanding = 0.0
-      @orders.each do |order|
-        outstanding += order.amount
-      end
-      outstanding
+      @orders.map(&:amount).
+              reduce(:+)
     end
 
     def print_banner
