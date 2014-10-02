@@ -18,9 +18,7 @@ module ExtractMethod
         outstanding += order.amount
       end
 
-      # print details
-      puts "name: #{@name}"
-      puts "amount: #{outstanding}"
+      print_details outstanding
 
     end
 
@@ -28,6 +26,11 @@ module ExtractMethod
       puts "*************************"
       puts "***** Customer Owes *****"
       puts "*************************"
+    end
+
+    def print_details outstanding
+      puts "name: #{@name}"
+      puts "amount: #{outstanding}"
     end
 
   end
