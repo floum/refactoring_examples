@@ -9,15 +9,13 @@ module ExtractMethod
     end
 
     def print_owing previous_amount
-      outstanding = previous_amount * 1.2 
-
-      # calculate_outstanding
-      @orders.each do |order|
-        outstanding += order.amount
-      end
-
       print_banner
-      print_details outstanding
+      print_details calculate_outstanding(previous_amount * 1.2)
+    end
+
+    def calculate_outstanding initial_amount
+      @orders.map(&:amount).
+              reduce(initial_amount, :+)
     end
 
     def print_banner
