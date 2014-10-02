@@ -1,29 +1,33 @@
 require 'spec_helper'
-include ExtractMethod
 
-describe ExtractMethod::Example1 do
-  context 'for Floum' do
-    before :each do
-      @example = Example1.new
-      @example.name = 'Floum'
-    end
-    context 'with a first 5.00$ order' do
-      before :each do
-        @order = Order.new
-        @order.amount = 5.00
-        @example.orders << @order
-      end
-      describe 'print owing' do
-        it 'prints a banner' do
-          expect{@example.print_owing}.to output("*************************
+RSpec.describe ExtractMethod::Example1 do
+  describe "#print_owing" do
+    context 'for Floum, with one order of 5.00$' do
+      it 'outputs to stdout' do
+        example1 = build :example1, name: 'Floum'
+        order = build :order, amount: 5.0
+        example1.orders << order
+        expect{example1.print_owing}.to output("*************************
 ***** Customer Owes *****
 *************************
 name: Floum
 amount: 5.0
-").to_stdout
-        end
+").to_stdout 
+      end
+    end
+    context 'for Veve, with ten orders of 4.50$' do
+      it 'outputs to stdout' do
+        example1 = build :example1, name: 'Veve'
+        orders = build_list :order, 10, amount: 4.5
+        example1.orders = orders
+        expect{example1.print_owing}.to output("*************************
+***** Customer Owes *****
+*************************
+name: Veve
+amount: 45.0
+").to_stdout 
       end
     end
   end
-
 end
+

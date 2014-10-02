@@ -9,17 +9,21 @@ module ExtractMethod
     end
 
     def print_owing
-      outstanding = 0.0
+      outstanding = calculate_outstanding
       
       print_banner
 
-      # calculate outstanding
+      print_details outstanding
+
+    end
+
+    def calculate_outstanding
+      @orders.!
+      outstanding = 0.0
       @orders.each do |order|
         outstanding += order.amount
       end
-
-      print_details outstanding
-
+      outstanding
     end
 
     def print_banner
