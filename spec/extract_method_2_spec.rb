@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe ExtractMethod::Example1 do
+RSpec.describe ExtractMethod::Example2 do
   describe "#print_owing(previous_amount)" do
     context 'with a previous amount of 4.0, for Floum, with one order of 5.00$' do
       it 'outputs to stdout' do
