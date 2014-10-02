@@ -5,7 +5,7 @@ RSpec.describe ExtractMethod::Example2 do
     context 'with a previous amount of 4.0, for Floum, with one order of 5.00$' do
       it 'outputs to stdout' do
         example2 = build :extract_method2, name: 'Floum'
-        order = build :order, amount: 5.0
+        order = build :extract_method_order, amount: 5.0
         example2.orders << order
         expect{example2.print_owing 4.0}.to output("*************************
 ***** Customer Owes *****
@@ -18,7 +18,7 @@ amount: 9.8
     context 'with a previous amount of 1.0, for Veve, with 4 orders of 3.00$' do
       it 'outputs to stdout' do
         example2 = build :extract_method2, name: 'Veve'
-        orders = build_list :order, 4, amount: 3.0
+        orders = build_list :extract_method_order, 4, amount: 3.0
         example2.orders = orders
         expect{example2.print_owing 1.0}.to output("*************************
 ***** Customer Owes *****
