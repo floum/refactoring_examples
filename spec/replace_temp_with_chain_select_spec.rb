@@ -2,6 +2,21 @@ require 'spec_helper'
 
 describe ReplaceTempWithChain::Select do
 
+  context "a Select with the option '1500' and '1600'" do
+    it 'has two options' do
+      select = Select.with_option('1500').and('1600')
+      expect(select).to have(2).options
+    end
+  end
+  context "with option '1' and '2' and '3'" do
+    it 'has three options' do
+      select = Select.with_option('1').and('2').and('3')
+      expect(select).to have(3).options
+    end
+
+  end
+
+
   context 'without any option' do
     before :each do
       @select = build :replace_temp_with_chain_select
