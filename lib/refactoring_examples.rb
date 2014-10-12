@@ -6,6 +6,7 @@ require 'refactoring_examples/inline_temp1'
 require 'refactoring_examples/replace_temp_with_query1'
 require 'refactoring_examples/replace_temp_with_chain_select'
 require 'refactoring_examples/introduce_explaining_variable'
+require 'refactoring_examples/split_temporary_variable'
 
 module RefactoringExamples
   # Your code goes here...
@@ -17,4 +18,5 @@ include InlineTemp
 include ReplaceTempWithQuery
 include ReplaceTempWithChain
 include IntroduceExplainingVariable
+include SplitTemporaryVariable
 
