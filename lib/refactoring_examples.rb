@@ -8,10 +8,7 @@ require 'refactoring_examples/replace_temp_with_chain_select'
 require 'refactoring_examples/introduce_explaining_variable'
 require 'refactoring_examples/split_temporary_variable'
 require 'refactoring_examples/remove_parameter_assignment'
-
-module RefactoringExamples
-  # Your code goes here...
-end
+require 'refactoring_examples/replace_method_with_method_object'
 
 include ExtractMethod
 include InlineMethod
@@ -21,4 +18,5 @@ include ReplaceTempWithChain
 include IntroduceExplainingVariable
 include SplitTemporaryVariable
 include RemoveParameterAssignment
+include ReplaceMethodWithMethodObject
 
