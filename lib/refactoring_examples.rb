@@ -9,6 +9,7 @@ require 'refactoring_examples/introduce_explaining_variable'
 require 'refactoring_examples/split_temporary_variable'
 require 'refactoring_examples/remove_parameter_assignment'
 require 'refactoring_examples/replace_method_with_method_object'
+require 'refactoring_examples/substitute_algorithm'
 
 include ExtractMethod
 include InlineMethod
@@ -19,4 +20,5 @@ include IntroduceExplainingVariable
 include SplitTemporaryVariable
 include RemoveParameterAssignment
 include ReplaceMethodWithMethodObject
+include SubstituteAlgorithm
 
